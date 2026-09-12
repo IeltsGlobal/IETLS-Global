@@ -2,45 +2,13 @@ import React from "react";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-surface">
-      {/* =====================================================
-          NAVIGATION
-          ===================================================== */}
-      <header className="bg-white border-b border-[var(--color-border)]">
-        <div className="container-ielts flex items-center justify-between min-h-16">
-          <div className="text-h4">
-            IELTS <span className="text-primary">GLOBAL</span>
-          </div>
-
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-nav">
-              Practice
-            </a>
-
-            <a href="#" className="text-nav">
-              Tests
-            </a>
-
-            <a href="#" className="text-nav">
-              Progress
-            </a>
-
-            <a href="#" className="text-nav text-primary">
-              Resources
-            </a>
-          </nav>
-
-          <button className="btn-primary">
-            Start Practicing
-          </button>
-        </div>
-      </header>
+    <main className="min-h-screen">
 
       {/* =====================================================
           HERO / DISPLAY
           ===================================================== */}
-      <section className="bg-dark text-white">
-        <div className="container-ielts py-24 md:py-32">
+      <section className="min-h-screen bg-dark text-white">
+        <div className="container-ielts flex min-h-screen items-center py-24 md:py-32">
           <div className="max-w-4xl">
             <div className="badge badge-primary mb-6">
               IELTS PREPARATION
@@ -58,7 +26,7 @@ const Index = () => {
               improve your score.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button className="btn-primary">
                 Start Practicing
               </button>
@@ -95,7 +63,7 @@ const Index = () => {
           <div className="space-y-10">
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 DISPLAY — 64px / 800
               </div>
 
@@ -105,7 +73,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 H1 — 52px / 800
               </div>
 
@@ -115,7 +83,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 H2 — 40px / 700
               </div>
 
@@ -125,7 +93,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 H3 — 28px / 700
               </div>
 
@@ -135,7 +103,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 H4 — 20px / 700
               </div>
 
@@ -145,7 +113,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 BODY LARGE
               </div>
 
@@ -156,7 +124,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 BODY
               </div>
 
@@ -167,7 +135,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 BODY MEDIUM
               </div>
 
@@ -178,7 +146,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 IELTS QUESTION
               </div>
 
@@ -189,7 +157,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 IELTS ANSWER
               </div>
 
@@ -200,7 +168,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 BUTTON
               </div>
 
@@ -210,7 +178,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 NAVIGATION
               </div>
 
@@ -220,7 +188,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 LABEL
               </div>
 
@@ -230,7 +198,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 CAPTION
               </div>
 
@@ -240,7 +208,7 @@ const Index = () => {
             </div>
 
             <div>
-              <div className="text-caption text-muted mb-2">
+              <div className="text-caption mb-2 text-muted">
                 SMALL
               </div>
 
@@ -269,43 +237,51 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
-            <div className="card overflow-hidden">
+            <div className="card overflow-x-hidden">
               <div className="h-32 bg-primary" />
+
               <div className="p-5">
                 <h4>Primary</h4>
-                <p className="text-caption text-muted mt-1">
+
+                <p className="text-caption mt-1 text-muted">
                   #00E6AB
                 </p>
               </div>
             </div>
 
-            <div className="card overflow-hidden">
+            <div className="card overflow-x-hidden">
               <div className="h-32 bg-dark" />
+
               <div className="p-5">
                 <h4>Dark</h4>
-                <p className="text-caption text-muted mt-1">
+
+                <p className="text-caption mt-1 text-muted">
                   #0A1B1F
                 </p>
               </div>
             </div>
 
-            <div className="card overflow-hidden">
+            <div className="card overflow-x-hidden">
               <div className="h-32 bg-[var(--color-primary-dark)]" />
+
               <div className="p-5">
                 <h4>Primary Dark</h4>
-                <p className="text-caption text-muted mt-1">
+
+                <p className="text-caption mt-1 text-muted">
                   #0F2D2D
                 </p>
               </div>
             </div>
 
-            <div className="card overflow-hidden">
-              <div className="h-32 bg-white border-b border-[var(--color-border)]" />
+            <div className="card overflow-x-hidden">
+              <div className="h-32 border-b border-[var(--color-border)] bg-white" />
+
               <div className="p-5">
                 <h4>White</h4>
-                <p className="text-caption text-muted mt-1">
+
+                <p className="text-caption mt-1 text-muted">
                   #FFFFFF
                 </p>
               </div>
@@ -313,26 +289,46 @@ const Index = () => {
 
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5">
+          <div className="mt-5 grid grid-cols-2 gap-5 md:grid-cols-4">
 
-            <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--color-text-secondary)] text-white">
-              <p className="text-label">SECONDARY</p>
-              <p className="text-small mt-2">#475569</p>
+            <div className="rounded-[var(--radius-lg)] bg-[var(--color-text-secondary)] p-6 text-white">
+              <p className="text-label">
+                SECONDARY
+              </p>
+
+              <p className="text-small mt-2">
+                #475569
+              </p>
             </div>
 
-            <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--color-text-muted)] text-white">
-              <p className="text-label">MUTED</p>
-              <p className="text-small mt-2">#64748B</p>
+            <div className="rounded-[var(--radius-lg)] bg-[var(--color-text-muted)] p-6 text-white">
+              <p className="text-label">
+                MUTED
+              </p>
+
+              <p className="text-small mt-2">
+                #64748B
+              </p>
             </div>
 
-            <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--color-success)] text-white">
-              <p className="text-label">SUCCESS</p>
-              <p className="text-small mt-2">#00B887</p>
+            <div className="rounded-[var(--radius-lg)] bg-[var(--color-success)] p-6 text-white">
+              <p className="text-label">
+                SUCCESS
+              </p>
+
+              <p className="text-small mt-2">
+                #00B887
+              </p>
             </div>
 
-            <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--color-error)] text-white">
-              <p className="text-label">ERROR</p>
-              <p className="text-small mt-2">#EF4444</p>
+            <div className="rounded-[var(--radius-lg)] bg-[var(--color-error)] p-6 text-white">
+              <p className="text-label">
+                ERROR
+              </p>
+
+              <p className="text-small mt-2">
+                #EF4444
+              </p>
             </div>
 
           </div>
@@ -355,7 +351,7 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-4 items-center">
+          <div className="flex flex-wrap items-center gap-4">
 
             <button className="btn-primary">
               Primary Button
@@ -427,7 +423,7 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid gap-6 md:grid-cols-3">
 
             <div className="card p-6">
               <span className="text-label text-primary">
@@ -498,9 +494,8 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
 
-            {/* Overall Score */}
             <div className="card p-8">
 
               <p className="text-label text-muted">
@@ -536,17 +531,16 @@ const Index = () => {
 
             </div>
 
-            {/* Skills */}
             <div className="card p-8">
 
               <p className="text-label text-muted">
                 SKILL PERFORMANCE
               </p>
 
-              <div className="space-y-6 mt-6">
+              <div className="mt-6 space-y-6">
 
                 <div>
-                  <div className="flex justify-between mb-2">
+                  <div className="mb-2 flex justify-between">
                     <span className="text-body-medium">
                       Reading
                     </span>
@@ -565,7 +559,7 @@ const Index = () => {
                 </div>
 
                 <div>
-                  <div className="flex justify-between mb-2">
+                  <div className="mb-2 flex justify-between">
                     <span className="text-body-medium">
                       Listening
                     </span>
@@ -584,7 +578,7 @@ const Index = () => {
                 </div>
 
                 <div>
-                  <div className="flex justify-between mb-2">
+                  <div className="mb-2 flex justify-between">
                     <span className="text-body-medium">
                       Writing
                     </span>
@@ -603,7 +597,7 @@ const Index = () => {
                 </div>
 
                 <div>
-                  <div className="flex justify-between mb-2">
+                  <div className="mb-2 flex justify-between">
                     <span className="text-body-medium">
                       Speaking
                     </span>
@@ -660,6 +654,7 @@ const Index = () => {
 
               <button className="answer-option">
                 <span>A.</span>
+
                 <span>
                   They wanted to earn a higher salary.
                 </span>
@@ -667,6 +662,7 @@ const Index = () => {
 
               <button className="answer-option selected">
                 <span>B.</span>
+
                 <span>
                   They wanted more flexibility and growth.
                 </span>
@@ -674,6 +670,7 @@ const Index = () => {
 
               <button className="answer-option">
                 <span>C.</span>
+
                 <span>
                   They wanted to move to another country.
                 </span>
@@ -681,6 +678,7 @@ const Index = () => {
 
               <button className="answer-option">
                 <span>D.</span>
+
                 <span>
                   They wanted to work fewer hours.
                 </span>
@@ -688,7 +686,7 @@ const Index = () => {
 
             </div>
 
-            <div className="flex justify-between items-center mt-8">
+            <div className="mt-8 flex items-center justify-between">
 
               <button className="btn-secondary">
                 Previous
@@ -723,7 +721,7 @@ const Index = () => {
           <div className="max-w-xl space-y-5">
 
             <div>
-              <label className="text-label block mb-2">
+              <label className="text-label mb-2 block">
                 Email Address
               </label>
 
@@ -735,7 +733,7 @@ const Index = () => {
             </div>
 
             <div>
-              <label className="text-label block mb-2">
+              <label className="text-label mb-2 block">
                 Test Type
               </label>
 
@@ -746,7 +744,7 @@ const Index = () => {
             </div>
 
             <div>
-              <label className="text-label block mb-2">
+              <label className="text-label mb-2 block">
                 Your Answer
               </label>
 
@@ -771,12 +769,15 @@ const Index = () => {
 
         <div className="container-ielts py-16">
 
-          <div className="grid md:grid-cols-4 gap-10">
+          <div className="grid gap-10 md:grid-cols-4">
 
             <div className="md:col-span-2">
 
               <h3 className="text-white">
-                IELTS <span className="text-primary">GLOBAL</span>
+                IELTS{" "}
+                <span className="text-primary">
+                  GLOBAL
+                </span>
               </h3>
 
               <p className="text-body mt-4 max-w-md text-white/60">
@@ -792,16 +793,25 @@ const Index = () => {
                 PRODUCT
               </p>
 
-              <div className="space-y-3 mt-4">
-                <a href="#" className="text-small text-white/70 block">
+              <div className="mt-4 space-y-3">
+                <a
+                  href="#"
+                  className="text-small block text-white/70"
+                >
                   Practice
                 </a>
 
-                <a href="#" className="text-small text-white/70 block">
+                <a
+                  href="#"
+                  className="text-small block text-white/70"
+                >
                   Tests
                 </a>
 
-                <a href="#" className="text-small text-white/70 block">
+                <a
+                  href="#"
+                  className="text-small block text-white/70"
+                >
                   Progress
                 </a>
               </div>
@@ -812,16 +822,25 @@ const Index = () => {
                 RESOURCES
               </p>
 
-              <div className="space-y-3 mt-4">
-                <a href="#" className="text-small text-white/70 block">
+              <div className="mt-4 space-y-3">
+                <a
+                  href="#"
+                  className="text-small block text-white/70"
+                >
                   IELTS Guide
                 </a>
 
-                <a href="#" className="text-small text-white/70 block">
+                <a
+                  href="#"
+                  className="text-small block text-white/70"
+                >
                   Study Tips
                 </a>
 
-                <a href="#" className="text-small text-white/70 block">
+                <a
+                  href="#"
+                  className="text-small block text-white/70"
+                >
                   Support
                 </a>
               </div>
