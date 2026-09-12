@@ -1,26 +1,1420 @@
+/* =========================================================
+   IELTS GLOBAL — GLOBAL DESIGN SYSTEM
+   ---------------------------------------------------------
+   Font: Plus Jakarta Sans
+   Framework: Tailwind CSS v4
+   Responsive: Mobile / Tablet / Desktop / Large Desktop
+   ========================================================= */
+
+
+/* =========================================================
+   1. EXTERNAL IMPORTS
+   IMPORTANT: @import MUST come before all CSS rules
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+
+/* =========================================================
+   2. TAILWIND THEME
+   Allows utilities such as:
+   bg-primary
+   bg-dark
+   bg-surface
+   text-primary
+   text-dark
+   text-secondary
+   ========================================================= */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #00e6ab;
+  --color-primary-dark: #0f2d2d;
+  --color-dark: #0a1b1f;
+
+  --color-white: #ffffff;
+
+  --color-text: #0a1b1f;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #0f2d2d;
+
+  --color-border: #e2e8f0;
+
+  --color-success: #00b887;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
 }
 
-@media (prefers-color-scheme: dark) {
+
+/* =========================================================
+   3. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+  /* -------------------------
+     Typography
+     ------------------------- */
+
+  --font-primary: "Plus Jakarta Sans", sans-serif;
+
+  /* -------------------------
+     Brand
+     ------------------------- */
+
+  --color-primary: #00e6ab;
+  --color-primary-dark: #0f2d2d;
+  --color-dark: #0a1b1f;
+  --color-white: #ffffff;
+
+  /* -------------------------
+     Text
+     ------------------------- */
+
+  --color-text: #0a1b1f;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-light: #94a3b8;
+
+  /* -------------------------
+     Background
+     ------------------------- */
+
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #0f2d2d;
+
+  /* -------------------------
+     Borders
+     ------------------------- */
+
+  --color-border: #e2e8f0;
+  --color-border-dark: rgba(255, 255, 255, 0.18);
+
+  /* -------------------------
+     Status
+     ------------------------- */
+
+  --color-success: #00b887;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* -------------------------
+     Radius
+     ------------------------- */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+
+  /* -------------------------
+     Shadows
+     ------------------------- */
+
+  --shadow-sm:
+    0 1px 3px rgba(10, 27, 31, 0.08);
+
+  --shadow-md:
+    0 4px 12px rgba(10, 27, 31, 0.10);
+
+  --shadow-lg:
+    0 12px 32px rgba(10, 27, 31, 0.12);
+
+  --shadow-xl:
+    0 20px 50px rgba(10, 27, 31, 0.16);
+
+  /* -------------------------
+     Layout
+     ------------------------- */
+
+  --container-width: 1280px;
+
+  --page-padding: 32px;
+
+  /* -------------------------
+     Transitions
+     ------------------------- */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+
+/* =========================================================
+   4. GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-primary);
+
+  scroll-behavior: smooth;
+
+  overflow-x: hidden;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-width: 320px;
+
+  font-family: var(--font-primary);
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: var(--color-text);
+  background: var(--color-background);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   5. GLOBAL ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+
+img {
+  height: auto;
+  display: block;
+}
+
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+
+::selection {
+  color: var(--color-dark);
+  background: var(--color-primary);
+}
+
+
+/* =========================================================
+   6. TYPOGRAPHY
+   ========================================================= */
+
+/* Display */
+
+.text-display {
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+
+  max-width: 100%;
+
+  overflow-wrap: break-word;
+}
+
+
+/* H1 */
+
+h1,
+.text-h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+
+  overflow-wrap: break-word;
+}
+
+
+/* H2 */
+
+h2,
+.text-h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+
+  overflow-wrap: break-word;
+}
+
+
+/* H3 */
+
+h3,
+.text-h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+
+  overflow-wrap: break-word;
+}
+
+
+/* H4 */
+
+h4,
+.text-h4 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+
+/* Body */
+
+p,
+.text-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+/* Large body */
+
+.text-body-lg {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+
+/* Medium body */
+
+.text-body-medium {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+
+/* IELTS question */
+
+.text-question {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+}
+
+
+/* IELTS answer */
+
+.text-answer {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+/* Button text */
+
+.text-button {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+/* Navigation */
+
+.text-nav {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* Label */
+
+.text-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+}
+
+
+/* Caption */
+
+.text-caption {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+/* Small */
+
+.text-small {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   7. TEXT COLORS
+   ========================================================= */
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+
+.text-white {
+  color: var(--color-white);
+}
+
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   8. BACKGROUNDS
+   ========================================================= */
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+
+.bg-surface-dark {
+  background-color: var(--color-surface-dark);
+}
+
+
+/* =========================================================
+   9. CONTAINER
+   ========================================================= */
+
+.container-ielts {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin-inline: auto;
+
+  padding-inline: var(--page-padding);
+}
+
+
+/* =========================================================
+   10. HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+
+  background: var(--color-dark);
+  color: var(--color-white);
+
+  overflow: hidden;
+}
+
+
+.hero-content {
+  width: 100%;
+  max-width: 850px;
+}
+
+
+.hero-title {
+  max-width: 850px;
+
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+
+  overflow-wrap: break-word;
+}
+
+
+.hero-description {
+  width: 100%;
+  max-width: 680px;
+
+  margin-top: 24px;
+
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.65;
+
+  color: rgba(255, 255, 255, 0.70);
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   11. BADGES
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 8px 16px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.035em;
+
+  border-radius: var(--radius-pill);
+
+  white-space: nowrap;
+}
+
+
+/* Primary badge */
+
+.badge-primary {
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+}
+
+
+/* Success */
+
+.badge-success {
+  color: #065f46;
+  background-color: #d1fae5;
+}
+
+
+/* Warning */
+
+.badge-warning {
+  color: #92400e;
+  background-color: #fef3c7;
+}
+
+
+/* Error */
+
+.badge-error {
+  color: #991b1b;
+  background-color: #fee2e2;
+}
+
+
+/* Dark badge */
+
+.badge-dark {
+  color: var(--color-white);
+  background-color: var(--color-primary-dark);
+}
+
+
+/* =========================================================
+   12. BUTTON BASE
+   ========================================================= */
+
+.btn-primary,
+.btn-secondary,
+.btn-dark {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid transparent;
+
+  white-space: nowrap;
+
+  transition:
+    transform var(--transition-normal),
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    opacity var(--transition-normal);
+}
+
+
+/* =========================================================
+   13. PRIMARY BUTTON
+   ========================================================= */
+
+.btn-primary {
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+}
+
+
+.btn-primary:hover {
+  background-color: #00dba3;
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+.btn-primary:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   14. SECONDARY BUTTON
+   ========================================================= */
+
+.btn-secondary {
+  color: var(--color-dark);
+  background-color: transparent;
+
+  border-color: var(--color-border);
+}
+
+
+.btn-secondary:hover {
+  background-color: var(--color-surface);
+
+  border-color: #cbd5e1;
+
+  transform: translateY(-1px);
+}
+
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   15. DARK BUTTON
+   ========================================================= */
+
+.btn-dark {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+
+
+.btn-dark:hover {
+  background-color: var(--color-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   16. SECONDARY BUTTON ON DARK BACKGROUND
+   ========================================================= */
+
+.btn-secondary-dark {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: var(--color-white);
+
+  background-color: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.30);
+
+  border-radius: var(--radius-md);
+
+  white-space: nowrap;
+
+  transition:
+    transform var(--transition-normal),
+    background-color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+
+.btn-secondary-dark:hover {
+  color: var(--color-white);
+
+  background-color: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.55);
+
+  transform: translateY(-1px);
+}
+
+
+.btn-secondary-dark:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   17. CARD
+   ========================================================= */
+
+.card {
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* Interactive card */
+
+.card-interactive {
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+
+.card-interactive:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(0, 230, 171, 0.45);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================================
+   18. INPUT
+   ========================================================= */
+
+.input {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding: 12px 14px;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--color-text);
+
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+
+.input::placeholder {
+  color: var(--color-text-light);
+}
+
+
+.input:hover {
+  border-color: #cbd5e1;
+}
+
+
+.input:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 230, 171, 0.15);
+}
+
+
+/* =========================================================
+   19. SELECT
+   ========================================================= */
+
+.select {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding: 12px 40px 12px 14px;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--color-text);
+
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.select:hover {
+  border-color: #cbd5e1;
+}
+
+
+.select:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 230, 171, 0.15);
+}
+
+
+/* =========================================================
+   20. TEXTAREA
+   ========================================================= */
+
+.textarea {
+  width: 100%;
+
+  min-height: 140px;
+
+  padding: 14px;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: var(--color-text);
+
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  resize: vertical;
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+
+.textarea:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 230, 171, 0.15);
+}
+
+
+/* =========================================================
+   21. IELTS EXAM QUESTION
+   ========================================================= */
+
+.exam-question {
+  width: 100%;
+
+  max-width: 900px;
+
+  padding: 32px;
+
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+.exam-question-title {
+  margin-bottom: 24px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   22. ANSWER OPTION
+   ========================================================= */
+
+.answer-option {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 16px 18px;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  color: var(--color-text);
+
+  background-color: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+.answer-option:hover {
+  background-color: var(--color-surface);
+
+  border-color: #cbd5e1;
+
+  transform: translateY(-1px);
+}
+
+
+.answer-option.selected {
+  background-color: rgba(0, 230, 171, 0.08);
+
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 2px rgba(0, 230, 171, 0.10);
+}
+
+
+/* =========================================================
+   23. SCORE
+   ========================================================= */
+
+.score {
+  font-size: 64px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  color: var(--color-dark);
+}
+
+
+/* =========================================================
+   24. PROGRESS
+   ========================================================= */
+
+.progress {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  background-color: #e2e8f0;
+
+  border-radius: var(--radius-pill);
+}
+
+
+.progress-bar {
+  height: 100%;
+
+  background-color: var(--color-primary);
+
+  border-radius: inherit;
+
+  transition: width 500ms ease;
+}
+
+
+/* =========================================================
+   25. DIVIDER
+   ========================================================= */
+
+.divider {
+  width: 100%;
+
+  height: 1px;
+
+  background-color: var(--color-border);
+}
+
+
+/* =========================================================
+   26. FOCUS ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(0, 230, 171, 0.45);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   27. TABLET
+   769px — 1024px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --page-padding: 28px;
+  }
+
+
+  h1,
+  .text-h1 {
+    font-size: 42px;
+  }
+
+
+  h2,
+  .text-h2 {
+    font-size: 34px;
+  }
+
+
+  h3,
+  .text-h3 {
+    font-size: 25px;
+  }
+
+
+  .text-display,
+  .hero-title {
+    font-size: clamp(44px, 7vw, 64px);
+  }
+
+
+  .text-body-lg {
+    font-size: 18px;
+  }
+
+
+  .text-question {
+    font-size: 17px;
+  }
+
+
+  .text-nav {
+    font-size: 14px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* =========================================================
+   28. MOBILE
+   <= 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  :root {
+    --page-padding: 20px;
+  }
+
+
+  h1,
+  .text-h1 {
+    font-size: 34px;
+
+    line-height: 1.12;
+  }
+
+
+  h2,
+  .text-h2 {
+    font-size: 29px;
+
+    line-height: 1.2;
+  }
+
+
+  h3,
+  .text-h3 {
+    font-size: 23px;
+
+    line-height: 1.3;
+  }
+
+
+  h4,
+  .text-h4 {
+    font-size: 19px;
+  }
+
+
+  .text-display,
+  .hero-title {
+    font-size: clamp(40px, 12vw, 58px);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+  }
+
+
+  .text-body-lg {
+    font-size: 17px;
+
+    line-height: 1.6;
+  }
+
+
+  p,
+  .text-body {
+    font-size: 15px;
+  }
+
+
+  .text-question {
+    font-size: 16px;
+  }
+
+
+  .text-answer {
+    font-size: 15px;
+  }
+
+
+  .text-button {
+    font-size: 14px;
+  }
+
+
+  .text-nav {
+    font-size: 14px;
+  }
+
+
+  .text-label {
+    font-size: 12px;
+  }
+
+
+  .text-caption {
+    font-size: 12px;
+  }
+
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-dark,
+  .btn-secondary-dark {
+    min-height: 46px;
+
+    padding: 11px 18px;
+  }
+
+
+  .exam-question {
+    padding: 22px;
+
+    border-radius: var(--radius-lg);
+  }
+
+
+  .exam-question-title {
+    font-size: 18px;
+  }
+
+
+  .answer-option {
+    padding: 14px;
+
+    font-size: 15px;
+  }
+
+
+  .score {
+    font-size: 52px;
+  }
+}
+
+
+/* =========================================================
+   29. SMALL MOBILE
+   <= 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  :root {
+    --page-padding: 16px;
+  }
+
+
+  h1,
+  .text-h1 {
+    font-size: 30px;
+  }
+
+
+  h2,
+  .text-h2 {
+    font-size: 25px;
+  }
+
+
+  h3,
+  .text-h3 {
+    font-size: 21px;
+  }
+
+
+  h4,
+  .text-h4 {
+    font-size: 18px;
+  }
+
+
+  .text-display,
+  .hero-title {
+    font-size: clamp(36px, 12vw, 50px);
+  }
+
+
+  .text-body-lg {
+    font-size: 16px;
+  }
+
+
+  .badge {
+    padding: 8px 13px;
+
+    font-size: 11px;
+  }
+
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-dark,
+  .btn-secondary-dark {
+    width: 100%;
+  }
+
+
+  .exam-question {
+    padding: 18px;
+  }
+
+
+  .answer-option {
+    gap: 10px;
+
+    padding: 13px;
+  }
+}
+
+
+/* =========================================================
+   30. LARGE DESKTOP
+   >= 1440px
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+  :root {
+    --page-padding: 40px;
+  }
+
+
+  h1,
+  .text-h1 {
+    font-size: 56px;
+  }
+
+
+  h2,
+  .text-h2 {
+    font-size: 42px;
+  }
+
+
+  h3,
+  .text-h3 {
+    font-size: 29px;
+  }
+
+
+  .text-display,
+  .hero-title {
+    font-size: 80px;
+  }
+
+
+  .text-body-lg {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   31. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
 }
